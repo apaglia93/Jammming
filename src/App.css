@@ -7,6 +7,39 @@ input[type=submit]:hover, .add-to-playlist:hover, .remove-from-playlist:hover, #
     cursor: pointer;
 }
 
+form {
+    background: lightblue; 
+    width: 70%;
+    margin: 1rem auto;
+    height: 30vh;
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border-radius: 5px;
+    border: 2px solid darkblue
+}
+
+input[type=text] {
+    grid-area: 2/2/3/5;
+    border-radius: 5px;
+    background: white; 
+    border: 2px solid darkblue;
+    font-size: 1.25rem; 
+    color: gray;
+    font-style: italic;
+    padding-left: 0.75rem;
+}
+
+input[type=submit] {
+    grid-area: 4/3/4/4;
+    border-radius: 5px;
+    border: none; 
+    background: darkblue;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0.75em 1em;
+}
+
 .outcome-div {
     border: 2px solid darkblue;
     border-radius: 5px;
