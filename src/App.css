@@ -7,7 +7,7 @@ input[type=submit]:hover, .add-to-playlist:hover, .remove-from-playlist:hover, #
     cursor: pointer;
 }
 
-form {
+#search-form {
     background: lightblue; 
     width: 70%;
     margin: 1rem auto;
@@ -19,7 +19,7 @@ form {
     border: 2px solid darkblue
 }
 
-input[type=text] {
+#search-form input[type=text] {
     grid-area: 2/2/3/5;
     border-radius: 5px;
     background: white; 
@@ -30,7 +30,7 @@ input[type=text] {
     padding-left: 0.75rem;
 }
 
-input[type=submit] {
+#search-form input[type=submit] {
     grid-area: 4/3/4/4;
     border-radius: 5px;
     border: none; 
@@ -74,4 +74,52 @@ input[type=submit] {
     font-size: 2rem;
     margin-right: 2rem;
     align-self: center;
+}
+
+#send-to-spotify-form {
+    background: darkblue;
+    margin: 2rem;
+    padding: 1rem;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 2rem auto;
+}
+
+#send-to-spotify-form h1, #send-to-spotify-form a, #send-to-spotify-form p, #send-to-spotify-form label {
+    color: white;
+}
+
+#send-to-spotify-form p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+#send-to-spotify-form form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+#send-to-spotify-form input{
+    border-radius: 5px;
+    background: white; 
+    font-size: 1.25rem; 
+    color: gray;
+    padding-left: 0.75rem;
+    margin: 0.25rem;
+}
+
+#send-to-spotify-form input[type=submit] {
+    width: 50%;
+    margin: auto;
+    background: white;
+    font-size: 1.25rem;
 }

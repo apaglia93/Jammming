@@ -79,7 +79,7 @@ export default function SearchContainer(props) {
     
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form id="search-form" onSubmit={handleSubmit}>
                 <input 
                     type='text' 
                     placeholder='Search for a song by its title'
