@@ -7,7 +7,6 @@ let token = ''
 
 export default function SearchContainer(props) {
     const [title, setTitle] = useState('')
-    const [authToken, setAuthToken] = useState()
     const [songList, setSongList] = useState()
 
     useEffect(() => {
@@ -26,7 +25,7 @@ export default function SearchContainer(props) {
         })
         .then(tokenResponse => {
             token = tokenResponse.data.access_token
-            setAuthToken(token)
+            props.setAuthToken(token)
         })
         
         const interval = setInterval(() => {
@@ -40,7 +39,7 @@ export default function SearchContainer(props) {
             })
             .then(tokenResponse => {
                 token = tokenResponse.data.access_token
-                setAuthToken(token)
+                props.setAuthToken(token)
             })
         }, 300000)
 
@@ -65,7 +64,7 @@ export default function SearchContainer(props) {
         try {
             const response = await axios.get(`https://api.spotify.com/v1/search?q=${title}&type=track`, {
                 headers: {
-                    'Authorization' : `Bearer ${authToken}`
+                    'Authorization' : `Bearer ${props.authToken}`
                 }
             })
             .then(response => {

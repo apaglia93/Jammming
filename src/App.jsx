@@ -22,12 +22,17 @@ function App() {
   const playlistSongsFromSearch = (songs) => {
     setPlaylistSongs(songs)
   }
+
+  const [authToken, setAuthToken] = useState()
+  const getAuthTokenFromSearch = (token) => {
+    setAuthToken(token)
+  }
   
   return (
     <>
       <Header />
-      {sendState? <SendForm sendState={sendState} setSendState={toggleSendState} /> : ''}
-      <SearchContainer setSongList={songListFromSearch} />
+      {sendState? <SendForm setPlaylistSongs={playlistSongsFromSearch} sendState={sendState} setSendState={toggleSendState} /> : ''}
+      <SearchContainer setSongList={songListFromSearch} authToken={authToken} setAuthToken={getAuthTokenFromSearch} />
       <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
         <SongsContainer songList={songList} setPlaylistSongs={playlistSongsFromSearch} playlistSongs={playlistSongs} />
         <PlaylistContainer playlistSongs={playlistSongs} setPlaylistSongs={playlistSongsFromSearch} sendState={sendState} setSendState={toggleSendState} />
