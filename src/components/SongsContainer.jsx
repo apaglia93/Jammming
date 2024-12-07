@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 export default function SongsContainer(props) {
+    const [playlistSongs, setPlaylistSongs] = useState([])
     const [songList, setSongList] = useState()
     useEffect(() => {
         setSongList(props.songList)
@@ -14,9 +15,20 @@ export default function SongsContainer(props) {
                     <p className='song-title'>{song.name}</p>
                     <p>{song.artists[0].name}</p>
                 </div>
-                <p className="add-to-playlist">+</p>
+                <p className="add-to-playlist" id={song.id} onClick={handleAddClick}>+</p>
             </div>
         )
+    }
+
+    const handleAddClick = (e) => {
+        if(playlistSongs.includes(e.target.id)) {
+            return
+        }
+
+        setPlaylistSongs([
+            ...playlistSongs, 
+            e.target.id
+        ])
     }
     
     return (
