@@ -73,5 +73,5 @@ input[type=submit] {
 .add-to-playlist, .remove-from-playlist {
     font-size: 2rem;
     margin-right: 2rem;
-    align-self: center
+    align-self: center;
 }

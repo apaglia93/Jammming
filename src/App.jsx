@@ -7,9 +7,14 @@ import SongsContainer from './components/SongsContainer'
 import PlaylistContainer from './components/PlaylistContainer'
 
 function App() {
-  const [songList, setSongList] = useState()
+  const [songList, setSongList] = useState([])
   const songListFromSearch = (songs) => {
     setSongList(songs)
+  }
+
+  const [playlistSongs, setPlaylistSongs] = useState([])
+  const playlistSongsFromSearch = (songs) => {
+    setPlaylistSongs(songs)
   }
   
   return (
@@ -17,8 +22,8 @@ function App() {
       <Header />
       <SearchContainer setSongList={songListFromSearch} />
       <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-        <SongsContainer songList={songList}/>
-        <PlaylistContainer />
+        <SongsContainer songList={songList} setPlaylistSongs={playlistSongsFromSearch} playlistSongs={playlistSongs} />
+        <PlaylistContainer playlistSongs={playlistSongs} setPlaylistSongs={playlistSongsFromSearch} />
       </div>
     </>
   )
