@@ -33,7 +33,6 @@ export default function SongsContainer(props) {
     
     return (
         <>
-            {playlistSongs.length > 0 ? playlistSongs : 'place'}
             <div className='outcome-div'>
                 <h1 className='section-title'>Search Results</h1>
                 {songList ? createSongContainers(songList) : <p style={{color: 'darkblue', padding: '1rem', textAlign: 'center'}}>Run a search to display some songs!</p>}
